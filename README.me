@@ -1,0 +1,147 @@
+# AI vs Real Image Detection Project
+
+This project implements a comprehensive comparison of different approaches to distinguish between AI-generated images and real photographs. The implementation supports multiple detection methods including traditional computer vision techniques, CLIP-based classification, and GPT-4o visual analysis.
+
+## Features
+
+- **Multiple Detection Methods**:
+  - Traditional CV features with machine learning
+  - CLIP text-image similarity analysis
+  - GPT-4o vision model analysis (requires API key)
+  - Ensemble approach combining all methods
+
+- **Comprehensive Analysis**:
+  - Detailed performance evaluation metrics
+  - Feature importance analysis
+  - Error analysis and visualization
+  - Confidence analysis
+  - Model comparison
+
+## Project Structure
+
+```
+ai_vs_real_detector/
+│
+├── main.py                  # Main script to run the project
+├── requirements.txt         # Python dependencies
+│
+├── data/                    # Data directory
+│   ├── real/                # Real images
+│   └── fake/                # AI-generated images
+│
+├── models/                  # Model implementations
+│   ├── __init__.py
+│   ├── cv_model.py          # Traditional CV model
+│   ├── clip_model.py        # CLIP model implementation
+│   ├── gpt4o_model.py       # GPT-4o model implementation
+│   └── ensemble.py          # Ensemble model combining all approaches
+│
+├── utils/                   # Utility functions
+│   ├── __init__.py
+│   ├── dataset.py           # Dataset handling functions
+│   ├── features.py          # Feature extraction
+│   ├── evaluation.py        # Evaluation metrics
+│   └── visualization.py     # Visualization functions
+│
+└── config.py                # Configuration settings
+```
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/ai-vs-real-detector.git
+   cd ai-vs-real-detector
+   ```
+
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Add your images to the data directory:
+   - Real photos in `data/real/`
+   - AI-generated images in `data/fake/`
+
+4. (Optional) Add your OpenAI API key to `config.py` if you want to use GPT-4o:
+   ```python
+   GPT4O_API_KEY = "your-api-key-here"
+   ```
+
+## Usage
+
+### Prepare the dataset:
+```
+python main.py --prepare-data
+```
+
+### Train the traditional CV model:
+```
+python main.py --train-cv-model
+```
+
+### Evaluate all models on the test set:
+```
+python main.py --evaluate-models --sample-size 100
+```
+
+### Analyze a specific image:
+```
+python main.py --analyze-image path/to/your/image.jpg
+```
+
+### Visualize sample images from the dataset:
+```
+python main.py --visualize-samples
+```
+
+### Save all results and visualizations:
+```
+python main.py --evaluate-models --save-results
+```
+
+### Full pipeline with all options:
+```
+python main.py --prepare-data --train-cv-model --evaluate-models --visualize-samples --save-results --gpt4o-key your-api-key-here
+```
+
+## Example Output
+
+The project generates various visualizations and analyses, including:
+
+- Confusion matrices for each model
+- ROC curves and precision-recall curves
+- Feature importance analysis
+- Model comparison charts
+- Sample image visualizations
+- Detailed error analysis
+
+## Requirements
+
+- Python 3.8+
+- OpenCV
+- scikit-image
+- scikit-learn
+- PyTorch
+- CLIP
+- Matplotlib
+- Pandas
+- NumPy
+- Requests (for GPT-4o API)
+
+## Citation
+
+If you use this project in your research, please cite:
+
+```
+@software{ai_vs_real_detector,
+  author = {Your Name},
+  title = {AI vs Real Image Detection},
+  year = {2025},
+  url = {https://github.com/yourusername/ai-vs-real-detector}
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

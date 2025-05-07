@@ -1,0 +1,24 @@
+# Data files
+data/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# System files
+.DS_Store
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Results directory (if you want to exclude it)
+# results/ 
